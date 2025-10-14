@@ -15,10 +15,10 @@ RUN ls -la
 
 # Rename files back to original names (with debug)
 RUN echo "Renaming files..." && \
-    (mv gradlew.temp gradlew && echo "gradlew renamed" || echo "gradlew.temp not found") && \
-    (mv gradlew.bat.temp gradlew.bat && echo "gradlew.bat renamed" || echo "gradlew.bat.temp not found") && \
-    (mv build.gradle.temp build.gradle && echo "build.gradle renamed" || echo "build.gradle.temp not found") && \
-    (mv settings.gradle.temp settings.gradle && echo "settings.gradle renamed" || echo "settings.gradle.temp not found")
+    (mv gradlew_original gradlew && echo "gradlew renamed" || echo "gradlew_original not found") && \
+    (mv gradlew_bat_original gradlew.bat && echo "gradlew.bat renamed" || echo "gradlew_bat_original not found") && \
+    (mv build_gradle_original build.gradle && echo "build.gradle renamed" || echo "build_gradle_original not found") && \
+    (mv settings_gradle_original settings.gradle && echo "settings.gradle renamed" || echo "settings_gradle_original not found")
 
 # List files again to confirm
 RUN ls -la
