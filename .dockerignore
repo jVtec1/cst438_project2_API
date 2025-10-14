@@ -1,0 +1,51 @@
+# Exclude build outputs
+build/
+target/
+*.jar
+*.war
+
+# Exclude IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# Exclude Git files
+.git/
+.gitignore
+
+# Exclude temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Exclude Docker files (avoid recursive copying)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Exclude Gradle/Maven wrapper downloads
+.gradle/
+# Note: Keep gradle-wrapper.jar as it's needed for builds
+# gradle/wrapper/gradle-wrapper.jar
+
+# Exclude documentation
+README.md
+docs/
+*.md
+
+# Exclude environment files
+.env
+.env.local
+.env.*.local
+
+# Exclude test reports
+test-results/
+coverage/
