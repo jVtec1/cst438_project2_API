@@ -8,7 +8,8 @@ WORKDIR /app
 # Copy Gradle wrapper and build files first (for better caching)
 COPY gradlew gradlew.bat ./
 COPY gradle/ gradle/
-COPY build.gradle settings.gradle ./
+COPY build.gradle.temp build.gradle
+COPY settings.gradle.temp settings.gradle
 
 # Make gradlew executable (important for Linux containers)
 RUN chmod +x gradlew
