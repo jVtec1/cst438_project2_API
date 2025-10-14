@@ -33,7 +33,8 @@ docker-compose.yml
 
 # Exclude Gradle/Maven wrapper downloads
 .gradle/
-gradle/wrapper/gradle-wrapper.jar
+# Note: Keep gradle-wrapper.jar as it's needed for builds
+# gradle/wrapper/gradle-wrapper.jar
 
 # Exclude documentation
 README.md
