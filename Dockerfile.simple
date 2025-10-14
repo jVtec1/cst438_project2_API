@@ -31,4 +31,4 @@ EXPOSE 8080
 
 # Build and run
 RUN ./gradlew bootJar --no-daemon
-CMD ["java", "-jar", "build/libs/demo-0.0.1-SNAPSHOT.jar"]
+CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar build/libs/demo-0.0.1-SNAPSHOT.jar"]
