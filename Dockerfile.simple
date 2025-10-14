@@ -10,6 +10,12 @@ WORKDIR /app
 # Copy all files
 COPY . .
 
+# Rename files back to original names
+RUN mv gradlew.temp gradlew 2>/dev/null || true
+RUN mv gradlew.bat.temp gradlew.bat 2>/dev/null || true  
+RUN mv build.gradle.temp build.gradle 2>/dev/null || true
+RUN mv settings.gradle.temp settings.gradle 2>/dev/null || true
+
 # Make gradlew executable
 RUN chmod +x gradlew
 
