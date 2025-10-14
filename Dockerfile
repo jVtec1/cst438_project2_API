@@ -6,7 +6,8 @@ FROM eclipse-temurin:17-jdk-alpine AS builder
 WORKDIR /app
 
 # Copy Gradle wrapper and build files first (for better caching)
-COPY gradlew gradlew.bat ./
+COPY gradlew.temp gradlew
+COPY gradlew.bat.temp gradlew.bat
 COPY gradle/ gradle/
 COPY build.gradle.temp build.gradle
 COPY settings.gradle.temp settings.gradle
