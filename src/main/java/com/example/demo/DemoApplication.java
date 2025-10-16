@@ -12,20 +12,9 @@ import java.security.Principal;
 @EnableWebSecurity
 @RestController
 public class DemoApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
-
-	@GetMapping("/")
-	public String index() {
-		return "SPRING BOOT IS WORKING!";
-	}
-
-	@GetMapping("/Greeting")
-	public String anakin() {
-		return "Hello World! I am Spring Boot! I am your brother anakin";
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
 	@GetMapping("/User")
 	public Principal user(Principal user){
