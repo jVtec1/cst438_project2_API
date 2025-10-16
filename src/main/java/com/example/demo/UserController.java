@@ -1,6 +1,7 @@
 // src/main/java/com/example/demo/UserController.java
 package com.example.demo;
 
+import com.example.demo.entity.User;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 

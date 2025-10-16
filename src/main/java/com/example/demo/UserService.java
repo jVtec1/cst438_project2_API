@@ -1,6 +1,7 @@
 // src/main/java/com/example/demo/UserService.java
 package com.example.demo;
 
+import com.example.demo.entity.User;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
