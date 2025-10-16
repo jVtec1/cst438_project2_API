@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@EnableWebSecurity
 @RestController
 public class DemoApplication {
 
@@ -21,6 +22,11 @@ public class DemoApplication {
 	@GetMapping("/Greeting")
 	public String anakin() {
 		return "Hello World! I am Spring Boot! I am your brother anakin";
+	}
+
+	@GetMapping("/User")
+	public Principal user(Principal user){
+		return user;
 	}
 
 }
