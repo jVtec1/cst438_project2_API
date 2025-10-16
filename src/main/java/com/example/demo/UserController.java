@@ -1,31 +1,33 @@
+// src/main/java/com/example/demo/UserController.java
 package com.example.demo;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-//@RequestMapping("api/Users")
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
 @RestController
+@RequestMapping("/api/users")
 public class UserController {
-    @GetMapping("/GetUsers")
-    public String getAllUser() {return "BOB, MARY, JOE";}
+    private final UserService service;
 
-    @GetMapping("/CreateUser")
-    public String createUser() {return "USER HAS BEEN CREATED";}
+    public UserController(UserService service) { this.service = service; }
 
-    @GetMapping("/DeleteUser")
-    public String deleteUser() {return "USER HAS BEEN DELETED";}
+    @GetMapping
+    public List<User> getAllUsers() {
+        return service.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable Long id) {
+        return service.findById(id);
+    }
+
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        return service.save(user);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        service.deleteById(id);
+    }
 }
-//        @GetMapping
-//        public List<User> getAllUsers() {
-//            return userService.findAll();
-//        }
-//
-//        @GetMapping("/{id}")
-//        public User getUser(@PathVariable Long id) {
-//            return userService.findById(id);
-//        }
-//
-//        @PostMapping
-//        public User createUser(@RequestBody User user) {
-//            return userService.save(user);
-//        }
-//}
