@@ -10,14 +10,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @Column(unique = true, nullable = false)
+
+    @Column(name = "username", unique = true, nullable = false)
     private String username;
-    
-    @Column(nullable = false)
+
+    @Column(name = "email", nullable = false)
     private String email;
-    
-    @Column(nullable = false)
+
+    @Column(name = "balance", nullable = false)
     private Double balance;
     
     @Column(name = "created_at")
