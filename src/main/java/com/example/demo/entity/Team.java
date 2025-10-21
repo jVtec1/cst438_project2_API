@@ -7,11 +7,17 @@ import jakarta.persistence.*;
 public class Team {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "team_id")
+    private Long teamId;
+    
+    @Column(name = "team_name", nullable = false)
+    private String teamName;
     
     @Column(nullable = false)
-    private String name;
+    private String nickname;
+    
+    @Column(name = "logo_url")
+    private String logoUrl;
     
     @Column(nullable = false)
     private String city;
@@ -21,8 +27,6 @@ public class Team {
     
     @Column(nullable = false)
     private String division;
-    
-    private String logoUrl;
     
     private Integer wins;
     
@@ -34,29 +38,45 @@ public class Team {
         this.losses = 0;
     }
 
-    public Team(String name, String city, String conference, String division) {
+    public Team(Long teamId, String teamName, String nickname, String logoUrl) {
         this();
-        this.name = name;
-        this.city = city;
-        this.conference = conference;
-        this.division = division;
+        this.teamId = teamId;
+        this.teamName = teamName;
+        this.nickname = nickname;
+        this.logoUrl = logoUrl;
     }
 
     // Getters n Setters
-    public Long getId() {
-        return id;
+    public Long getTeamId() {
+        return teamId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
     }
 
-    public String getName() {
-        return name;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getLogoUrl() {
+        return logoUrl;
+    }
+
+    public void setLogoUrl(String logoUrl) {
+        this.logoUrl = logoUrl;
     }
 
     public String getCity() {
