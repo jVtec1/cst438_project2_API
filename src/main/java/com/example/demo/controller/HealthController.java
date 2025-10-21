@@ -15,7 +15,7 @@ public class HealthController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/status")
     public Map<String, Object> home() {
         Map<String, Object> response = new HashMap<>();
         response.put("status", "UP");
