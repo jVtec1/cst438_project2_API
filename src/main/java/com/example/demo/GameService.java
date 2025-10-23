@@ -1,8 +1,14 @@
 package com.example.demo;
 
 import com.example.demo.entity.Game;
+import com.example.demo.entity.Game.GameStatus;
+import com.example.demo.entity.Team;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.sterotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import java.time.LocalDateTime;
 
 import java.util.Optional;
 public interface GameService {

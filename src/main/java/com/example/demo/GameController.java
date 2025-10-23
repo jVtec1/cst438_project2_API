@@ -1,8 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.game.entity.Game;
-import com.example.demo.game.entity.Game.GameStatus;
-import com.example.demo.game.service.GameService;
+import com.example.demo.entity.Game;
+import com.example.demo.entity.Game.GameStatus;
+
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -26,7 +26,7 @@ public class GameController {
         this.service = service;
     }
 
-    // ====== JSON request models (kept INSIDE this file to avoid new classes) ======
+
     public static class CreateGameRequest {
         @NotNull private Long homeTeamId;
         @NotNull private Long awayTeamId;
@@ -76,7 +76,6 @@ public class GameController {
 
     // ====== Endpoints ======
 
-    // List (pagination params stay in the URL — this is normal)
     @GetMapping
     public Page<Game> list(@RequestParam(defaultValue = "0") int page,
                            @RequestParam(defaultValue = "20") int size) {

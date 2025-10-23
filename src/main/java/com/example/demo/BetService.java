@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.entity.Bet;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;

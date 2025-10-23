@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.entity.Team;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

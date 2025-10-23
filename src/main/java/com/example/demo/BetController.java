@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.entity.Bet;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -39,20 +40,20 @@ public class BetController {
         return service.create(bet);
     }
 
-    // Update (JSON body; partial allowed — nulls ignored)
+    // Update (JSON body)
     @PutMapping("/{id}")
     public Bet update(@PathVariable Long id, @Valid @RequestBody Bet bet) {
         return service.update(id, bet);
     }
 
-    // Delete
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
 
-    // Minimal inline error mapping
+
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(EntityNotFoundException.class)
     public Map<String, String> handleNotFound(EntityNotFoundException ex) {
