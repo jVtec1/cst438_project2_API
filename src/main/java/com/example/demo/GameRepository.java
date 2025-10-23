@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface GameRepository extends JpaRepository<Game,Long>{
     Page<Game> findByStatus(GameStatus status, Pageable pageable);
 
-    Page<Game> findByHomeTeamIdOrAwayTeamId(Long homeTeamId, Long awayTeamId, Pageable, pageable);
+    Page<Game> findByHomeTeamIdOrAwayTeamId(Long homeTeamId, Long awayTeamId, Pageable pageable);
 
     Page<Game> findByGameDateBetween(LocalDateTime start, LocalDateTime end, Pageable pageable);
 

@@ -12,7 +12,7 @@ public interface GameService {
 
     Game create(Long homeTeamId, Long awayTeamId, LocalDateTime gameDate, Double pointSpread, Double overUnder);
 
-    Game update(Long id, Long homeTeamId, Long awayTeamId, LocalDateTime gameDate, GameStatus status Double pointSpread, Double overUnder, Integer getHomeScore, Integer getAwayScore );
+    Game update(Long id, Long homeTeamId, Long awayTeamId, LocalDateTime gameDate, GameStatus status, Double pointSpread, Double overUnder, Integer getHomeScore, Integer getAwayScore );
 
     void delete(Long id);
 
