@@ -169,7 +169,11 @@ public class GameService {
 
     // --- Validation helpers ---
     private void validateStatusTransition(GameStatus current, GameStatus next) {
-        if (current == GameStatus.CANCELLED && next != GameStatus.CANCELLED)
+        if (current == GameStatus.CANCELLED && next != GameStatus.CANCELLED) {
             throw new IllegalStateException("Cancelled games cannot change status.");
-        if (current == GameStatus.COMPLETED && next != GameStatus.COMPLETED)
-            throw new IllegalStateException("Completed game
+        }
+        if (current == GameStatus.COMPLETED && next != GameStatus.COMPLETED) {
+            throw new IllegalStateException("Completed game");
+        }
+    }
+}
