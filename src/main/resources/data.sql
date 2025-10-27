@@ -1,8 +1,8 @@
--- Insert test users data
-INSERT IGNORE INTO users (username, password, email, balance, is_active) VALUES 
-('testUser1', '1234', 'test1@example.com', 100.50, TRUE),
-('testUser2', '1234', 'test2@example.com', 250.75, TRUE),
-('john_doe', 'password123', 'john@example.com', 500.00, TRUE);
+-- Insert test users data (without password for now - will be added after schema update)
+INSERT IGNORE INTO users (username, email, balance, is_active) VALUES 
+('testUser1', 'test1@example.com', 100.50, TRUE),
+('testUser2', 'test2@example.com', 250.75, TRUE),
+('john_doe', 'john@example.com', 500.00, TRUE);
 
 -- Insert NBA teams matching frontend data
 INSERT IGNORE INTO teams (team_id, team_name, nickname, logo_url, city, conference, division) VALUES 
@@ -13,5 +13,5 @@ INSERT IGNORE INTO teams (team_id, team_name, nickname, logo_url, city, conferen
 (20, 'Miami Heat', 'Heat', 'https://upload.wikimedia.org/wikipedia/en/f/fb/Miami_Heat_logo.svg', 'Miami', 'Eastern', 'Southeast'),
 (24, 'New York Knicks', 'Knicks', 'https://upload.wikimedia.org/wikipedia/en/2/25/New_York_Knicks_logo.svg', 'New York', 'Eastern', 'Atlantic');
 
--- Insert test favorites
+-- Insert test favorites (will work once users table is created)
 INSERT IGNORE INTO favorites (user_id, team_id) VALUES (1, 1);
