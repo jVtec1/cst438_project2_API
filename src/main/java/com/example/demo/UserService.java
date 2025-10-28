@@ -14,4 +14,17 @@ public class UserService {
     public User findById(Long id) { return repo.findById(id).orElse(null); }
     public User save(User user) { return repo.save(user); }
     public void deleteById(Long id) { repo.deleteById(id); }
+    
+    public User findByUsername(String username) {
+        return repo.findByUsername(username);
+    }
+    
+    public boolean isUsernameAvailable(String username) {
+        return repo.findByUsername(username) == null;
+    }
+    
+    public boolean verifyUserLogin(String username, String password) {
+        User user = repo.findByUsername(username);
+        return user != null && user.getPassword().equals(password);
+    }
 }

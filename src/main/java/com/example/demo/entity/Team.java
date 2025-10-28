@@ -10,6 +10,15 @@ public class Team {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(name = "team_id", unique = true)
+    private Long teamId;
+    
+    @Column(name = "team_name", nullable = false)
+    private String teamName;
+    
+    @Column(nullable = false)
+    private String nickname;
+    
     @Column(nullable = false)
     private String name;
     
@@ -57,6 +66,30 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getCity() {
